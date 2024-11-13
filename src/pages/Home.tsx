@@ -10,7 +10,7 @@ const Home: React.FC = () => {
 
   const addTodo = () => {
     if (prenom.trim() === '' && nom.trim() === '') return;
-    setTodo((todos) => [...todos, `${prenom} ${nom}`]);
+    setTodo((todos) => [...todos, `${prenom}  ${nom}`]);
     setPrenom('');
     setNom('');
   }
@@ -34,10 +34,12 @@ const Home: React.FC = () => {
       <IonContent fullscreen>
         <IonInput 
           placeholder="Prenom"
+          value={prenom}
           onIonChange={(e) => setPrenom(e.detail.value!)}
         />
         <IonInput
           placeholder="Nom"
+          value={nom}
           onIonChange={(e) => setNom(e.detail.value!)}
         />
         <IonButton onClick={addTodo}>Ajouter</IonButton>
